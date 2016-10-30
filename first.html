@@ -1,0 +1,175 @@
+ <!-- FlatFy Theme - Andrea Galanti /-->
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> 
+<html> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Flatfy Free Flat and Responsive HTML5 Template ">
+    <meta name="author" content="">
+
+    <title>Check In - Main Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+ 
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+	
+    <!-- Custom CSS-->
+    <link href="css/general.css" rel="stylesheet">
+	 <!-- Owl-Carousel -->
+    <link href="css/custom.css" rel="stylesheet">
+	<link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
+	
+	<!-- Magnific Popup core CSS file -->
+	<link rel="stylesheet" href="css/magnific-popup.css"> 
+	
+	<script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr -->
+
+</head>
+
+<body onload="startTime()">
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
+
+	<!-- Use it -->
+    <div id ="useit" class="content-section-a available">
+        <div class="container">		
+            <div class="row">
+				<div class="col-sm-5 pull-right wow fadeInRightBig schedule">
+                    <div class="container time"><!-- This shows the current date and time -->
+                    	<h2 class="timestamp" id="demo"></h2>
+                    	<p id="demo2">Error!</p>
+                    </div>
+                    <div class="container calendar"> <!-- This is a calendar -->
+	                    <div id="task">
+	                    	<h4 id="tasktitle">CHI Projects Meeting</h4>
+	                    	<p id="tasktime"><em id="starthour">11</em>:<em id="startminute">30</em> - <em id="endhour">15</em>:<em id="endminute">50</em></p>
+	                    </div>
+	                    <div id="task">
+	                    	<h4 id="tasktitle">Thursday Hackathon</h4>
+	                    	<p id="tasktime">15:00 - 15:30</p>
+	                    </div>
+	                    <p><a class="col-sm-6 btn btn-embossed btn-primary bookroom" href="book.html" role="button">Book the room</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-7 wow fadeInLeftBig status" id="leftside" data-animation-delay="200">
+                	<div class="sub-title lead3">UM Information Interation Lab</div> 
+                    <h3 onclick="refresh()" class="section-heading statustitle" id="roomstatus">Available</h3>
+                    <p class="placeholder1">
+					</p>
+					 <p><a class="col-sm-5 btn btn-embossed btn-primary checkinbutton" href="CheckIn.html" role="button">Check In</a> 
+					 <p class="col-sm-1 empty1"></p>
+					 <p><a class="col-sm-5 btn btn-embossed btn-info checkinbutton" href="#" role="button">Check Out</a></p>
+				</div>   
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/owl.carousel.js"></script>
+	<script src="js/script.js"></script>
+	<!-- StikyMenu -->
+	<script src="js/stickUp.min.js"></script>
+	<script type="text/javascript">
+	  jQuery(function($) {
+		$(document).ready( function() {
+		  $('.navbar-default').stickUp();
+		  
+		});
+	  });
+	
+	</script>
+	<!-- Smoothscroll -->
+	<script type="text/javascript" src="js/jquery.corner.js"></script> 
+	<script src="js/wow.min.js"></script>
+	<script>
+	 new WOW().init();
+	</script>
+	<script src="js/classie.js"></script>
+	<script src="js/uiMorphingButton_inflow.js"></script>
+	<!-- Magnific Popup core JS file -->
+	<script src="js/jquery.magnific-popup.js"></script> 
+	<script>
+		function startTime() {
+		    var today = new Date();
+		    var h = today.getHours();
+		    var m = today.getMinutes();
+		    var d = today.getDay();
+		    var da = today.getDate();
+		    var mo = today.getMonth();
+		    var ye = today.getFullYear();
+		    m = checkTime(m);
+		    var ampm;
+		    if(h>=12){
+		    	ampm="PM";
+		    }else{
+		    	ampm="AM";
+		    }
+		    var start = Number(document.getElementById("starthour").innerHTML)*60 + Number(document.getElementById("startminute").innerHTML);
+		    var end = Number(document.getElementById("endhour").innerHTML*60) + Number(document.getElementById("endminute").innerHTML);
+		    var current = h*60+m;
+		    var day;
+		    if(d == 0){
+		    	var day = "Sunday";
+		    };
+		    if(d == 1){
+		    	var day = "Monday";
+		    };
+		    if(d == 2){
+		    	var day = "Tuesday";
+		    };
+		    if(d == 3){
+		    	var day = "Wednesday";
+		    };
+		    if(d == 4){
+		    	var day = "Thursday";
+		    };
+		    if(d == 5){
+		    	var day = "Friday";
+		    };
+		    if(d == 6){
+		    	var day = "Saturday";
+		    };
+		    document.getElementById("demo").innerHTML =
+		    h + ":" + m + " " +ampm;
+		    document.getElementById("demo2").innerHTML = day + ", " + mo + "/" + da + "/" + ye;
+		    if(start<=current&&end>=current){
+				document.getElementById("roomstatus").innerHTML= "Room In Use";
+				document.getElementById('leftside').style.background= "url(../Check%20In%20and%20Out/img/inuse.png) repeat left center fixed";
+				var checkinbutton = document.getElementsByClassName("checkinbutton");
+				checkinbutton[1].style.display="none";
+				checkinbutton[0].innerHTML="End the meeting";
+				checkinbutton[0].href="#";
+				//for(i=0; i<=checkinbutton.length; i++){
+					//checkinbutton[i].style.display="none";
+				//};
+		    };
+		    var t = setTimeout(startTime, 500);
+		};
+		function checkTime(i) {
+   			if (i < 10) {i = "0" + i};
+    		return i;
+		};
+	</script>
+	<script>
+		function refresh(){
+			location.reload();
+		}
+	</script>
+</body>
+
+</html>
